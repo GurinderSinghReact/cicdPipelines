@@ -1,7 +1,7 @@
 name: react-native-android-build-apk
 
 on:
-  workflow_dispatch:
+  push:
     branches: [main]
     # can add push and pull_request here 
 jobs:
