@@ -27,10 +27,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run Yarn Install
+      - name: Install node modules
         run: |
-             cd ./packages/app-mobile/
-             npm i -g corepack
              yarn install             
       - name: Build application
         run: |
