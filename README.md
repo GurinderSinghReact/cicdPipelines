@@ -77,3 +77,24 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+<!-- 
+      - name: Sign App Bundle
+    id: sign_app
+    uses: r0adkll/sign-android-release@v1
+    with:
+    releaseDirectory: android/app/build/outputs/apk/release
+    signingKeyBase64: ${{ secrets.ANDROID_SIGNING_KEY }}
+    alias: ${{ secrets.ANDROID_ALIAS }}
+    keyStorePassword: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
+    keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+    - name: Upload App to Google Play
+  uses: r0adkll/upload-google-play@v1
+  with:
+    serviceAccountJsonPlainText: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON_TEXT }}
+    packageName: com.test.test
+    releaseFiles: android/app/build/outputs/bundle/release/*.aab
+    track: alpha
+    status: completed
+    inAppUpdatePriority: 2 -->
